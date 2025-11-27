@@ -15,6 +15,18 @@ echo.
 REM Change to the directory where this batch file is located
 cd /d "%~dp0"
 
+REM Debug information
+echo Current directory: %cd%
+echo Looking for app.py in current directory...
+dir app.py >nul 2>&1
+if %errorlevel% neq 0 (
+    echo Error: app.py not found in the current directory!
+    echo Contents of current directory:
+    dir
+    pause
+    exit /b 1
+)
+
 REM Check if Python is installed
 python --version >nul 2>&1
 if %errorlevel% neq 0 (
