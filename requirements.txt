@@ -1,0 +1,8 @@
+docling
+pymupdf
+pandas
+pydantic
+streamlit
+opencv-python
+nltk
+numpy
